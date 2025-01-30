@@ -1,4 +1,4 @@
-# rbtree_bench
+# rv32emu-rbtree-optimization
 
 ![linux-map vs jemalloc-map](./img/bench-plot.png)
 
