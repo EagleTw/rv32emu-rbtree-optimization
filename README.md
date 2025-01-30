@@ -2,11 +2,20 @@
 
 ![linux-map vs jemalloc-map](./img/bench-plot.png)
 
-## About this project
+## Overview
+
+This project focuses on benchmarking and optimizing the red-black tree-based map used in rv32emu. The goal is to improve performance, memory efficiency, and execution speed through profiling, algorithmic refinements, and potential jemalloc-style enhancements.
 
 This project aims to enhance the performance of [rv32emu](https://github.com/sysprog21/rv32emu) by addressing issue [#29](https://github.com/sysprog21/rv32emu/issues/29).
 
-The original implementation of rv32emu utilizes a Linux-like red-black tree, providing a C++ std::map-like interface. As part of this project, the red-black tree implementation has been modified from jemalloc, resulting in improved performance for map insertion, find, and delete operations.
+## Features
+
+- 🚀 Benchmarking & Profiling: Measure insert, delete, and lookup performance.
+- 🔧 Optimizations: Improve memory usage and execution speed.
+- ⚡ Integration with rv32emu: Enhance existing map structures.
+- 📊 Comparative Analysis: Test against alternative data structures.
+
+## Results
 
 The following data represents the average time of 20 experiments, each involving the insertion, finding, and deletion of 10 million randomly generated nodes in a random order. The experiments were conducted on an Apple M1 Pro (10-core) processor.
 
@@ -53,37 +62,30 @@ Python
 
 ### Installation
 
-Clone to your local directory
+Clone the repository and build the project:
 
 ```shell
 git clone https://github.com/EagleTw/rv32emu-rbtree-optimization
-```
-
-Run cmake
-
-```
-cmake .
-```
-
-Compile and create executables
-
-```
+cd rv32emu-rbtree-optimization
+cmake
 make
 ```
 
-## Usage
+### Running Benchmarks
 
-Run bench
+Execute the benchmark suite with:
 
 ``` shell
 ./bench.sh
 ```
 
-## Roadmap
+Modify parameters in `config.h` to adjust benchmarking scenarios.
 
-* [x] Clone jemalloc rb.h
-* [x] Integrate map interface to match C++ std::map
-* [x] Create test for correctness
-* [x] Create bench plot
-* [x] Computational time and memory benchmark
-* [x] PR
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+Special thanks to the rv32emu developers and the jemalloc community for inspiration on memory-efficient red-black tree implementations.
+
